@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/uikit.min.css"/>
+  <script src="js/uikit.min.js"></script>
+  <script src="js/uikit-icons.min.js"></script>
+  <title>Методы анализа изображений</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png"/>
+</head>
+<body>
+<div id="app">
+  <header class="uk-padding">
+    <div id="logo">Методы анализа изображений</div>
+  </header>
+  <main>
+    <div class="uk-grid" uk-grid>
+      <aside class="uk-width-1-4">
+        <nav class="uk-padding-small uk-padding-remove-vertical">
+          <ul>
+            <li>
+              <button class="uk-button uk-button-primary uk-width-1-1" data-type="origin" disabled>Оригинал
+              </button>
+            </li>
+            <li>
+              <button class="uk-button uk-button-primary uk-width-1-1" data-type="noise" disabled>Noise level analysis
+              </button>
+            </li>
+            <li>
+              <button class="uk-button uk-button-primary uk-width-1-1" data-type="wavelet" disabled>Wavelet analysis
+              </button>
+            </li>
+            <li>
+              <button class="uk-button uk-button-primary uk-width-1-1" data-type="select-image" disabled>Выбрать изображение
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <section class="uk-width-expand uk-padding uk-padding-remove-vertical">
+        <div class="image-container">
+          <div class="js-upload uk-placeholder uk-text-center uk-padding-large uk-flex uk-flex-center uk-flex-middle" id="image-loader">
+            <div>
+              <span uk-icon="icon: cloud-upload"></span>
+              <span class="uk-text-middle">Перетащите изображение в эту область или </span>
+              <div uk-form-custom>
+                <input type="file" id="image-input"/>
+                <span class="uk-link">выберите его</span>
+              </div>
+            </div>
+          </div>
+          <canvas id="loaded-image" max-size="600" height="0" width="0"/>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="uk-text-center footer">
+    &copy; Кващук Мария
+  </footer>
+</div>
+</body>
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="utils/utils.js"></script>
+<script src='utils/ImageAccess.js'></script>
+<script src="utils/ImageProcessing.js"></script>
+<script src="image_modifier/histogram-equalization-grey.js"></script>
+<script src="image_modifier/histogram-equalization-rgb.js"></script>
+<script src="image_modifier/color-equalizer.js"></script>
+<script src='methods/noise_analysis/NLA.js'></script>
+<script src='methods/wavelet_analysis/Wavelet.js'></script>
+<script src="image_modifier/image-manipulation.js"></script>
+</html>
